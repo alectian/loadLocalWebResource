@@ -14,11 +14,32 @@
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    [self configLocalHttpServer];
     return YES;
 }
+
+- (void)configLocalHttpServer{
+    self.localHttpServer = [[HTTPServer alloc] init];
+    [self.localHttpServer setType:@"_http.tcp"];
+    
+    //指定服务器的目录，以后请求资源就在这个目录里，这个目录拖拽进来的时候要选Create folder references,是一个蓝色文件夹
+    NSString * webLocalPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"webpack"];
+    [self.localHttpServer setDocumentRoot:webLocalPath];
+    
+    [self startServer];
+}
+
+- (void)startServer {
+    NSError *error;
+    if ([self.localHttpServer start:&error]){
+        UInt16 port = [self.localHttpServer listeningPort];
+        self.port = [NSNumber numberWithInt:port].stringValue;
+    } else{
+        NSLog(@"服务器启动出错-->%@",error);
+    }
+}
+
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {

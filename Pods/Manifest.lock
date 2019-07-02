@@ -1,0 +1,35 @@
+PODS:
+  - CocoaAsyncSocket (7.6.3)
+  - CocoaLumberjack (2.4.0):
+    - CocoaLumberjack/Default (= 2.4.0)
+    - CocoaLumberjack/Extensions (= 2.4.0)
+  - CocoaLumberjack/Core (2.4.0)
+  - CocoaLumberjack/Default (2.4.0):
+    - CocoaLumberjack/Core
+  - CocoaLumberjack/Extensions (2.4.0):
+    - CocoaLumberjack/Default
+  - CVCocoaHTTPServeriOS (1.1):
+    - CocoaAsyncSocket
+    - CocoaLumberjack (~> 2.4.0)
+  - MBProgressHUD (1.1.0)
+
+DEPENDENCIES:
+  - CVCocoaHTTPServeriOS (~> 1.1)
+  - MBProgressHUD (~> 1.1.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - CocoaAsyncSocket
+    - CocoaLumberjack
+    - CVCocoaHTTPServeriOS
+    - MBProgressHUD
+
+SPEC CHECKSUMS:
+  CocoaAsyncSocket: eafaa68a7e0ec99ead0a7b35015e0bf25d2c8987
+  CocoaLumberjack: aa9dcab71bdf9eaf2a63bbd9ddc87863efe45457
+  CVCocoaHTTPServeriOS: a9dfa09842721e8f831a3bd8c8882cdbede6c055
+  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
+
+PODFILE CHECKSUM: 463b132768104055e2ab48d84c57ec67f6e1901b
+
+COCOAPODS: 1.5.3

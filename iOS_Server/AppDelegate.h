@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CVCocoaHTTPServeriOS/CVCocoaHTTPServeriOS-umbrella.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
+@property (nonatomic,strong) HTTPServer *localHttpServer;
+@property (nonatomic,copy) NSString *port;
 
 @end
 
